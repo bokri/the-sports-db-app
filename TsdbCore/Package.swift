@@ -28,6 +28,14 @@ let package = Package(
             resources: [
                 .process("Resources"),
             ]
-        )
+        ),
+        .testTarget(
+            name: "TsdbCoreTests",
+            dependencies: ["TsdbCore",
+                           .product(name: "OHHTTPStubsSwift", package: "OHHTTPStubs")
+            ],
+            resources: [
+                .process("Resources")
+            ]),
     ]
 )
