@@ -18,18 +18,19 @@ public extension TeamItem {
     func toData() -> TeamModel {
         return TeamModel(id: idTeam,
                          name: strTeam,
-                         alternativeName: strAlternate,
+                         alternativeName: strAlternate ?? "",
                          foundationYear: intFormedYear,
-                         stadium: strStadium,
-                         stadiumDescription: strStadiumDescription,
-                         stadiumCapacity: intStadiumCapacity,
-                         website: strWebsite,
-                         facebook: strFacebook,
-                         twitter: strTwitter,
-                         instagram: strInstagram,
-                         teamDescription: strDescriptionEN,
+                         stadium: strStadium ?? "",
+                         stadiumDescription: strStadiumDescription ?? "",
+                         stadiumCapacity: intStadiumCapacity ?? "",
+                         website: strWebsite ?? "",
+                         facebook: strFacebook ?? "",
+                         twitter: strTwitter ?? "",
+                         instagram: strInstagram ?? "",
+                         teamDescription: strDescriptionEN ?? "",
                          country: strCountry,
-                         logo: strTeamBadge,
-                         banner: strTeamBanner)
+                         logo: strTeamBadge ?? "",
+                         banner: strTeamBanner ?? "",
+                         leagues: "\(strLeague) - \(strLeague2) - \(strLeague3) - \(strLeague4) - \(strLeague5) - \(strLeague6) - \(strLeague7)")
     }
 }

@@ -29,6 +29,7 @@ public class TeamModel: Identifiable {
     public var country: String
     public var logo: String
     public var banner: String
+    public var leagues: String
     
     // MARK: - Constructors
     
@@ -46,7 +47,8 @@ public class TeamModel: Identifiable {
          teamDescription: String,
          country: String,
          logo: String,
-         banner: String) {
+         banner: String,
+         leagues: String) {
         self.id = id
         self.name = name
         self.alternativeName = alternativeName
@@ -62,5 +64,6 @@ public class TeamModel: Identifiable {
         self.country = country
         self.logo = logo
         self.banner = banner
+        self.leagues = leagues
     }
 }

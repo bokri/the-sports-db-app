@@ -22,7 +22,7 @@ import SwiftData
  # Parameters:
  - `Model`: A type that conforms to the `PersistentModel` protocol, representing a model entity with persistent storage properties.
 */
-open class GenericDataAccessObject<Model: PersistentModel> {
+public struct GenericDataAccessObject<Model: PersistentModel> {
     
     // MARK: - Properties
     
@@ -38,6 +38,7 @@ open class GenericDataAccessObject<Model: PersistentModel> {
      */
     init(context: ModelContext) {
         self.context = context
+        self.context.autosaveEnabled = false
     }
     
     // MARK: - DAO Methods
@@ -49,7 +50,7 @@ open class GenericDataAccessObject<Model: PersistentModel> {
      
      - Throws: An error if there is an issue with retrieving the data from the data store.
      */
-    open func getAll() throws -> [Model] {
+    public func getAll() throws -> [Model] {
         let params = FetchDescriptor<Model>()
         let result = try context.fetch(params)
         return result
@@ -60,10 +61,11 @@ open class GenericDataAccessObject<Model: PersistentModel> {
      
      - Parameter models: An array of model entities to create and insert into the data store.
      */
-    open func create(_ models: [Model]) {
+    public func create(_ models: [Model]) {
         for model in models {
             context.insert(model)
         }
+        try? save()
     }
 
     /**
@@ -73,7 +75,7 @@ open class GenericDataAccessObject<Model: PersistentModel> {
      
      - Throws: An error if there is an issue with saving the changes to the data store.
      */
-    open func save() throws {
+    public func save() throws {
         if context.hasChanges {
             try context.save()
         }

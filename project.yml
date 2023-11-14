@@ -1,0 +1,74 @@
+configs:
+  Debug: debug
+  Release: release
+
+configFiles:
+  Debug: TheSportsDBApp/XcConfig/TsdbProject.xcconfig
+  Release: TheSportsDBApp/XcConfig/TsdbProject.xcconfig
+
+name: TheSportsDBApp
+
+options:
+  bundleIdPrefix: com.abokri.TheSportsDBApp
+
+packages:
+  TsdbCore:
+    path: TsdbCore
+
+targetTemplates:
+  BaseApp:
+    configFiles:
+      Debug: TheSportsDBApp/XcConfig/TsdbApp.xcconfig
+      Release: TheSportsDBApp/XcConfig/TsdbApp.xcconfig
+    settings:
+      configs:
+        Debug:
+          ENABLE_BITCODE: NO
+          INFOPLIST_FILE: TheSportsDBApp/Resources/Info.plist
+          MARKETING_VERSION: 1.0
+          CURRENT_PROJECT_VERSION: 1
+          CODE_SIGN_ENTITLEMENTS: TheSportsDBApp/Resources/TheSportsDBApp.entitlements
+        Release:
+          ENABLE_BITCODE: NO
+          INFOPLIST_FILE: TheSportsDBApp/Resources/Info.plist
+          MARKETING_VERSION: 1.0
+          CURRENT_PROJECT_VERSION: 1
+          CODE_SIGN_ENTITLEMENTS: TheSportsDBApp/Resources/TheSportsDBApp.entitlements
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - TheSportsDBApp
+    dependencies:
+      - package: TsdbCore
+
+targets:
+  TheSportsDbApp:
+    templates: [BaseApp]
+    scheme:
+      gatherCoverageData: true
+      coverageTargets:
+        - TheSportsDbApp
+    settings:
+      configs:
+        Debug:
+          INFOPLIST_KEY_CFBundleDisplayName: "The Sports DB (Debug)"
+          OTHER_SWIFT_FLAGS: -D PROD
+        Release:
+          INFOPLIST_KEY_CFBundleDisplayName: "The Sports DB"
+          OTHER_SWIFT_FLAGS: -D PROD
+
+  TheSportsDbAppDev:
+    templates: [BaseApp]
+    scheme:
+      gatherCoverageData: true
+      coverageTargets:
+        - TheSportsDbAppDev
+    settings:
+      configs:
+        Debug:
+          INFOPLIST_KEY_CFBundleDisplayName: "TSDB Dev (Debug)"
+          OTHER_SWIFT_FLAGS: -D DEV
+        Release:
+          INFOPLIST_KEY_CFBundleDisplayName: "TSDB Dev"
+          OTHER_SWIFT_FLAGS: -D DEV

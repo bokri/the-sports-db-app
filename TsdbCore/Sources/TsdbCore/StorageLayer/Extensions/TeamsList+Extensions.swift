@@ -14,8 +14,8 @@ public extension TeamsList {
      - Returns: An array of `TeamModel` objects or an empty array.
      */
     func toData() -> [TeamModel] {
-        return teams.map { item in
+        return teams?.map { item in
             item.toData()
-        }
+        } ?? []
     }
 }

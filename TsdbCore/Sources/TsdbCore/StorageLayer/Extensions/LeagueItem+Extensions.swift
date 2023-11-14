@@ -19,6 +19,6 @@ public extension LeagueItem {
         return LeagueModel(id: idLeague,
                            name: strLeague,
                            sport: strSport,
-                           alternativeName: strLeagueAlternate)
+                           alternativeName: strLeagueAlternate ?? "")
     }
 }

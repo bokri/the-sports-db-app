@@ -23,7 +23,7 @@ public struct TeamsRepository: TsdbRepositoryProtocol {
         self.dao = dao
     }
 
-    public func sync(_ input: [ModelType]) async {
+    public func sync(_ input: [ModelType]) {
         do {
             // Fetch existing data from the local data store
             var oldDatas = try dao.getAll()
@@ -33,9 +33,8 @@ public struct TeamsRepository: TsdbRepositoryProtocol {
             
             // Create new items in the data store
             dao.create(notAlreadySaved)
-            
+
             // Save changes to the local data store
-            try dao.save()
         } catch {
             Logger.error("Error on synchronizing datastore with : \(error.localizedDescription)")
         }
