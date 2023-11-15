@@ -24,8 +24,7 @@ struct TheSportsDBApp: App {
     /// A shared ModelContainer for managing persistent data storage.
     var sharedModelContainer: ModelContainer = {
         let schemas = Schema([
-            LeagueModel.self,
-            TeamModel.self
+            LeagueModel.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schemas, isStoredInMemoryOnly: false)
         

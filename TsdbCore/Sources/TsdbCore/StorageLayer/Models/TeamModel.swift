@@ -8,12 +8,10 @@
 import Foundation
 import SwiftData
 
-@Model
 public class TeamModel: Identifiable {
     
     // MARK: - Properties
 
-    @Attribute(.unique)
     public var id: String
     public var name: String
     public var alternativeName: String

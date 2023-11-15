@@ -23,12 +23,12 @@ class LeaguesListPresenter {
     /// Indicates whether an error occurred during data fetching.
     var isOnError = false
     
+    /// team-related data.
+    var teams: [TeamModel] = []
+    
     /// Repository for handling league-related data.
     private var leaguesRepository: LeaguesRepository
-    
-    /// Repository for handling team-related data.
-    private var teamsRepository: TeamsRepository
-    
+
     /// A set of cancellables to manage Combine subscriptions.
     private var cancellables = Set<AnyCancellable>()
     
@@ -38,9 +38,8 @@ class LeaguesListPresenter {
     /// - Parameters:
     ///   - leaguesRepository: Repository for leagues data.
     ///   - teamsRepository: Repository for teams data.
-    init(leaguesRepository: LeaguesRepository, teamsRepository: TeamsRepository) {
+    init(leaguesRepository: LeaguesRepository) {
         self.leaguesRepository = leaguesRepository
-        self.teamsRepository = teamsRepository
     }
     
     // MARK: - Methods
@@ -83,7 +82,7 @@ class LeaguesListPresenter {
         do {
             let remoteTeams = try await NetworkManager.shared.fetchData(TheSportsDbAPIEndpoint.allTeams(league: league), type: TeamsList.self).toData()
 
-            teamsRepository.sync(remoteTeams)
+            teams = remoteTeams
         } catch {
             Logger.error("Error on Getting Teams \(error.localizedDescription)")
         }

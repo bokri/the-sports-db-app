@@ -21,7 +21,7 @@ struct ContentView: View {
 
 #Preview {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: LeagueModel.self, TeamModel.self, configurations: config)
+    let container = try! ModelContainer(for: LeagueModel.self, configurations: config)
 
     return ContentView()
         .modelContainer(container)

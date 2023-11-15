@@ -19,8 +19,6 @@ struct LeaguesListView: View {
     @State private var presenter: LeaguesListPresenter
     
     @Query private var leagues: [LeagueModel]
-    @Query(sort: [SortDescriptor(\TeamModel.name)], animation: .easeInOut) 
-    private var teams: [TeamModel]
     @State private var search: String = ""
     
     var searchLeaguesResults: [LeagueModel] {
@@ -35,15 +33,14 @@ struct LeaguesListView: View {
         if search.isEmpty {
             return []
         } else {
-            return teams.filter { $0.leagues.lowercased().contains(search.lowercased()) }
+            return presenter.teams
         }
     }
     
     // MARK: - Constructors
     
     init(modelContext: ModelContext) {
-        let presenter = LeaguesListPresenter(leaguesRepository: LeaguesRepository(context: modelContext),
-                                             teamsRepository: TeamsRepository(context: modelContext))
+        let presenter = LeaguesListPresenter(leaguesRepository: LeaguesRepository(context: modelContext))
         self._presenter = State(initialValue: presenter)
     }
     

@@ -65,6 +65,7 @@ public struct CacheImageView: View {
                 Logger.warning("Image download failed with error: \(error)")
             }
             .frame(maxWidth: width ?? .infinity, maxHeight: height)
+            .aspectRatio(contentMode: .fit)
             .cornerRadius(10)
     }
 }

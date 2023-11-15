@@ -25,8 +25,13 @@ public struct TeamDetailView: View {
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Team Logo
-                CacheImageView(imageURL: team.logo, height: 150)
+                HStack(alignment: .center) {
+                    Spacer()
+                    // Team Logo
+                    CacheImageView(imageURL: team.logo, width: 200, height: 150)
+                    
+                    Spacer()
+                }
 
                 // Team Name
                 Text(team.name)
@@ -34,31 +39,31 @@ public struct TeamDetailView: View {
                     .fontWeight(.bold)
 
                 // Alternative Name
-                Text("team.alternativeName \(team.alternativeName)", bundle: Bundle.module)
+                Text(String(localized: "team.alternativeName \(team.alternativeName)", bundle: Bundle.module))
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Foundation Year
-                Text("team.foundationYear \(team.foundationYear)", bundle: Bundle.module)
+                Text(String(localized: "team.foundationYear \(team.foundationYear)", bundle: Bundle.module))
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Stadium
-                Text("team.stadium \(team.stadium)", bundle: Bundle.module)
+                Text(String(localized: "team.stadium \(team.stadium)", bundle: Bundle.module))
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Stadium Description
-                Text("team.stadiumDescription \(team.stadiumDescription)", bundle: Bundle.module)
+                Text(String(localized: "team.stadiumDescription \(team.stadiumDescription)", bundle: Bundle.module))
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Stadium Capacity
-                Text("team.stadiumCapacity \(team.stadiumCapacity)", bundle: Bundle.module)
+                Text(String(localized: "team.stadiumCapacity \(team.stadiumCapacity)", bundle: Bundle.module))
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
-                if let url = URL(string: team.website) {
+                if let url = URL(string: "https://\(team.website)") {
                     // Website
                     Link(String(localized: "team.website", bundle: Bundle.module), destination: url)
                         .font(.subheadline)
@@ -66,7 +71,7 @@ public struct TeamDetailView: View {
                 }
 
                 // Team Description
-                Text("team.teamDescription \(team.teamDescription)", bundle: Bundle.module)
+                Text(String(localized: "team.teamDescription \(team.teamDescription)", bundle: Bundle.module))
                     .font(.body)
 
                 Spacer()

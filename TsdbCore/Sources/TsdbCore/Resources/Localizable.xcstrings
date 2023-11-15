@@ -34,7 +34,7 @@
         }
       }
     },
-    "team.alternativeName" : {
+    "team.alternativeName %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -45,7 +45,7 @@
         }
       }
     },
-    "team.country" : {
+    "team.country %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -56,7 +56,7 @@
         }
       }
     },
-    "team.foundationYear" : {
+    "team.foundationYear %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -67,7 +67,7 @@
         }
       }
     },
-    "team.stadium" : {
+    "team.stadium %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -78,7 +78,7 @@
         }
       }
     },
-    "team.stadiumCapacity" : {
+    "team.stadiumCapacity %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -89,7 +89,7 @@
         }
       }
     },
-    "team.stadiumDescription" : {
+    "team.stadiumDescription %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -100,7 +100,7 @@
         }
       }
     },
-    "team.teamDescription" : {
+    "team.teamDescription %@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
