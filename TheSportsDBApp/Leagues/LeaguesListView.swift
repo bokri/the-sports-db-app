@@ -19,14 +19,15 @@ struct LeaguesListView: View {
     @State private var presenter: LeaguesListPresenter
     
     @Query private var leagues: [LeagueModel]
-    @Query(sort: [SortDescriptor(\TeamModel.name)], animation: .easeInOut) private var teams: [TeamModel]
+    @Query(sort: [SortDescriptor(\TeamModel.name)], animation: .easeInOut) 
+    private var teams: [TeamModel]
     @State private var search: String = ""
     
     var searchLeaguesResults: [LeagueModel] {
         if search.isEmpty {
             return []
         } else {
-            return leagues.filter { $0.name.contains(search) || $0.alternativeName.contains(search) }
+            return leagues.filter { $0.name.lowercased().contains(search.lowercased()) || $0.alternativeName.lowercased().contains(search.lowercased()) }
         }
     }
     
@@ -34,7 +35,7 @@ struct LeaguesListView: View {
         if search.isEmpty {
             return []
         } else {
-            return teams.filter { $0.leagues.contains(search) }
+            return teams.filter { $0.leagues.lowercased().contains(search.lowercased()) }
         }
     }
     

@@ -14,10 +14,10 @@ import TsdbCore
 
  The `TheSportsDBApp` structure is the starting point of the SwiftUI app, which initializes the core components of the app and defines the app's main scene.
 
- - Note: This structure initializes a `ModelContainer` for managing persistent data storage using the SwiftData framework, including the schemas and model configurations required for storing and retrieving data related to the app's movie listings.
+ - Note: This structure initializes a `ModelContainer` for managing persistent data storage using the SwiftData framework, including the schemas and model configurations required for storing and retrieving data related to the app's leagues listings.
 */
 @main
-struct TheMovieDBApp: App {
+struct TheSportsDBApp: App {
     
     // MARK: - Properties
     

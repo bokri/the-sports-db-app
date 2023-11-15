@@ -34,59 +34,39 @@ public struct TeamDetailView: View {
                     .fontWeight(.bold)
 
                 // Alternative Name
-                Text("Alternative Name: \(team.alternativeName)")
+                Text("team.alternativeName \(team.alternativeName)", bundle: Bundle.module)
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Foundation Year
-                Text("Foundation Year: \(team.foundationYear)")
+                Text("team.foundationYear \(team.foundationYear)", bundle: Bundle.module)
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Stadium
-                Text("Stadium: \(team.stadium)")
+                Text("team.stadium \(team.stadium)", bundle: Bundle.module)
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Stadium Description
-                Text("Stadium Description: \(team.stadiumDescription)")
+                Text("team.stadiumDescription \(team.stadiumDescription)", bundle: Bundle.module)
                     .font(.subheadline)
                     .foregroundColor(.gray)
 
                 // Stadium Capacity
-                Text("Stadium Capacity: \(team.stadiumCapacity)")
+                Text("team.stadiumCapacity \(team.stadiumCapacity)", bundle: Bundle.module)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-
-                // Website
-                Link("Website", destination: URL(string: team.website)!)
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
-
-                // Social Media Links
-                HStack {
-                    Image(systemName: "facebook")
-                    Text("Facebook: \(team.facebook)")
+                
+                if let url = URL(string: team.website) {
+                    // Website
+                    Link(String(localized: "team.website", bundle: Bundle.module), destination: url)
                         .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-
-                HStack {
-                    Image(systemName: "twitter")
-                    Text("Twitter: \(team.twitter)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-
-                HStack {
-                    Image(systemName: "instagram")
-                    Text("Instagram: \(team.instagram)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.blue)
                 }
 
                 // Team Description
-                Text("Team Description: \(team.teamDescription)")
+                Text("team.teamDescription \(team.teamDescription)", bundle: Bundle.module)
                     .font(.body)
 
                 Spacer()

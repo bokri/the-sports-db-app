@@ -31,7 +31,7 @@ public struct TeamCell: View {
                 .font(.headline)
                 .fontWeight(.bold)
 
-            Text("Country: \(team.country)")
+            Text("team.country \(team.country)", bundle: Bundle.module)
                 .font(.subheadline)
                 .foregroundColor(.gray)
 

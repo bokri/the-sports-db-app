@@ -13,7 +13,7 @@ public extension LeagueItem {
      
      This method takes an instance of `LeagueItem` and transforms it into a  `LeagueModel`. It maps properties from the `LeagueItem` to the `LeagueModel`.
      
-     - Returns: A detailed `LeagueModel` instance with enhanced movie information.
+     - Returns: A detailed `LeagueModel` instance with enhanced league information.
      */
     func toData() -> LeagueModel {
         return LeagueModel(id: idLeague,

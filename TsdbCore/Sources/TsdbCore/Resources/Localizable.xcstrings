@@ -33,6 +33,94 @@
           }
         }
       }
+    },
+    "team.alternativeName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternative Name: %@"
+          }
+        }
+      }
+    },
+    "team.country" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Country : %@"
+          }
+        }
+      }
+    },
+    "team.foundationYear" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foundation Year : %@"
+          }
+        }
+      }
+    },
+    "team.stadium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadium : %@"
+          }
+        }
+      }
+    },
+    "team.stadiumCapacity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadium Capacity : %@"
+          }
+        }
+      }
+    },
+    "team.stadiumDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stadium Description : %@"
+          }
+        }
+      }
+    },
+    "team.teamDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Team Description : %@"
+          }
+        }
+      }
+    },
+    "team.website" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Website"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -13,7 +13,7 @@ public extension TeamItem {
      
      This method takes an instance of `TeamItem` and transforms it into a  `TeamModel`. It maps properties from the `TeamItem` to the `TeamModel`.
      
-     - Returns: A detailed `TeamModel` instance with enhanced movie information.
+     - Returns: A detailed `TeamModel` instance with enhanced team information.
      */
     func toData() -> TeamModel {
         return TeamModel(id: idTeam,

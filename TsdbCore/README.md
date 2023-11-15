@@ -9,7 +9,7 @@ TsdbCore is a Swift package for core functionality used in TheSportsDBApp. It pr
 
 - **Networking**: TsdbCore handles HTTP requests and responses to interact with the API endpoints. It includes functions for fetching sports, teams, and more.
 
-- **Caching**: The package integrates with Kingfisher for efficient image caching and loading, making it easy to display movie posters and images.
+- **Caching**: The package integrates with Kingfisher for efficient image caching and loading, making it easy to display teams logos.
 
 - **Unit Testing**: TsdbCore includes unit tests that ensure the package's functionality is robust and reliable. It uses OHHTTPStubs for API request stubbing during testing.
 

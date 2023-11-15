@@ -1,61 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Genres: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Genres: %@"
-          }
-        }
-      }
-    },
-    "moviesTabTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Movies"
-          }
-        }
-      }
-    },
-    "Original Language: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Original Language: %@"
-          }
-        }
-      }
-    },
-    "Release Date: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Release Date: %@"
-          }
-        }
-      }
-    },
-    "Similar Movies" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Similar Movies"
-          }
-        }
-      }
-    }
+
   },
   "version" : "1.0"
 }
